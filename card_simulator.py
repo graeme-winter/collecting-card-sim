@@ -36,7 +36,5 @@ if __name__ == "__main__":
             for j in range(args.iter)
         ]
     )
-    q1, med, q3 = tuple(map(int, np.percentile(population, [25, 50, 75])))
-    minmax = population.min(), population.max()
-    print(f"Min / max: {minmax[0]} / {minmax[1]}")
-    print(f"Quartiles: {q1} / {med} / {q3}")
+    q = tuple(map(int, np.percentile(population, [25, 50, 75])))
+    print(args.count, args.collected, population.min(), *q, population.max())
